@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Text.Json;
 using Core.Entities;
 using Microsoft.Extensions.Logging;
@@ -8,9 +9,10 @@ public class StoreContextSeed
 {
     public static async Task SeedAsync(StoreContext context)
     {
+        var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         if (!context.Products.Any())
         {
-            var productsData = await File.ReadAllTextAsync("../Infrastructure/Data/SeedData/Products.json");
+            var productsData = await File.ReadAllTextAsync(path + @"/Data/SeedData/Products.json");
 
             var products = JsonSerializer.Deserialize<List<Product>>(productsData);
 
@@ -23,7 +25,7 @@ public class StoreContextSeed
         
         if (!context.DeliveryMethods.Any())
         {
-            var dmData = await File.ReadAllTextAsync("../Infrastructure/Data/SeedData/delivery.json");
+            var dmData = await File.ReadAllTextAsync(path + @"/Data/SeedData/delivery.json");
 
             var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
 
