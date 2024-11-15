@@ -18,7 +18,8 @@ public static class OrderMappingExtensions
             ShippingPrice = order.DeliveryMethod.Price,
             OrderItems = order.OrderItems.Select(x => x.ToDto()).ToList(),
             Subtotal = order.Subtotal,
-            Total = order.GetTotal(),
+            Discount = order.Discount,
+            Total = order.GetTotal(),  
             Status = order.Status.ToString(),
             PaymentIntentId = order.PaymentIntentId
         };
@@ -32,7 +33,7 @@ public static class OrderMappingExtensions
             ProductName = orderItem.ItemOrdered.ProductName,
             PictureUrl = orderItem.ItemOrdered.PictureUrl,
             Price = orderItem.Price,
-            Quantity = orderItem.Quantity,
+            Quantity = orderItem.Quantity
         };
     }
 }

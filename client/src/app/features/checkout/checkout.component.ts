@@ -124,7 +124,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     if (event.selectedIndex === 1) {
       if (this.saveAddress) {
         const address = await this.getAddressFromStripeAddress() as Address;
-        address && firstValueFrom(this.accountService.updateAddress(address))
+        address && await firstValueFrom(this.accountService.updateAddress(address))
       }
     } else if (event.selectedIndex === 2) {
       await firstValueFrom(this.stripeService.createOrUpdatePaymentIntent())
@@ -169,11 +169,10 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   private async createOrderModel(): Promise<OrderToCreate> {
     const cart = this.cartService.cart();
     const shippingAddress = await this.getAddressFromStripeAddress() as ShippingAddress;
-
     const card = this.confirmationToken?.payment_method_preview.card;
 
     if (!cart?.id || !cart.deliveryMethodId || !card || !shippingAddress) {
-      throw new Error("Problem creating the order");
+      throw new Error('Problem creating order');
     }
 
     return {
@@ -185,7 +184,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         expYear: card.exp_year
       },
       deliveryMethodId: cart.deliveryMethodId,
-      shippingAddress
+      shippingAddress,
+      discount: this.cartService.totals()?.discount
     }
   }
 
