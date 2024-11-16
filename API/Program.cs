@@ -31,6 +31,8 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
 });
 
 builder.Services.AddSingleton<ICartService, CartService>();
+builder.Services.AddSingleton<IResponseCacheService, ResponseCacheService>();
+
 builder.Services.AddScoped<ICouponService, CouponService>();
 
 builder.Services.AddAuthorization();
