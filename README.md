@@ -11,13 +11,13 @@ An internet shop with cart management using Redis, supporting sorting and filter
 >- This project is **optimized for desktop screens** and may not display correctly on mobile devices. If viewing on a smaller screen, consider adjusting the browser zoom for the best experience.
 
 ### 📸 Product Filtering & Sorting **(Video Demo)**
-[![Watch Video]()]()
+[![Watch Video](https://i.imgur.com/ZsKfhol.png)](https://i.imgur.com/ZsKfhol.mp4)
 
 ### 📹 Real Payment via Stripe **(Video Demo)**
-[![Watch Video]()]()
+[![Watch Video](https://i.imgur.com/raHVxe1.png)](https://i.imgur.com/raHVxe1.mp4)
 
 ### 📹 Order Management for Admins **(Video Demo)**
-[![Watch Video]()]()
+[![Watch Video](https://i.imgur.com/T05cDgC.png)](https://i.imgur.com/T05cDgC.mp4)
 
 ---
 
