@@ -23,7 +23,7 @@ An internet shop with cart management using Redis, supporting sorting and filter
 
 ## 🛠 Tech Stack
 
-- **Backend**: C#, ASP.NET, SQL Server  
+- **Backend**: C#, ASP.NET Core Web API, SQL Server  
 - **Frontend**: Angular, TypeScript, Zustand (for global state)
 - **Database**: SQL Server + Redis (for cart storage)  
 - **Authentication**: .NET Identity (Roles: User & Admin)  
