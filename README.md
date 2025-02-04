@@ -47,6 +47,7 @@ An internet shop with cart management using Redis, supporting sorting and filter
     - **Refund payments** when necessary.
 - 🔄 **Secure Login & Authentication**: Managed via **ASP.NET Identity**.
 - 🌍 **Optimized Deployment**: Angular frontend is **precompiled into static files** and served by the **.NET backend on Azure**.
+- ⚡ **Caching for Performance Optimization**: Speeds up data retrieval by reducing the need to query the database for frequently accessed information.
 
 ---
 
